@@ -1,0 +1,37 @@
+on boot
+	chown system system /proc/AllHWList/LCM0
+	chown system system /proc/AllHWList/LCM0/color_mode
+	chown system system /proc/AllHWList/LCM0/color_temperature
+	chown media media /proc/AllHWList/LCM0/CABC_settings
+	chown system system /proc/AllHWList/LCM0/awer_status
+	chown system system /proc/AllHWList/LCM0/awer_cnt
+	chmod 777 /proc/AllHWList/LCM0
+	chmod 664 /proc/AllHWList/LCM0/color_mode
+	chmod 664 /proc/AllHWList/LCM0/color_temperature
+	chmod 664 /proc/AllHWList/LCM0/CABC_settings
+	chmod 664 /proc/AllHWList/LCM0/awer_status
+	chmod 664 /proc/AllHWList/LCM0/awer_cnt
+
+on property:sys.boot_completed=1
+	start qdcm_script
+
+on property:sys.qdcm.loadxml=1
+	copy /vendor/etc/qdcm_calib_data_ft8716_1080p_video_mode_dsi_panel_pl2.xml /data/vendor/display/qdcm_calib_data_ft8716_1080p_video_mode_dsi_panel_pl2.xml
+	chown system system /data/vendor/display/qdcm_calib_data_ft8716_1080p_video_mode_dsi_panel_pl2.xml
+	chmod 664 /data/vendor/display/qdcm_calib_data_ft8716_1080p_video_mode_dsi_panel_pl2.xml
+	copy /vendor/etc/qdcm_calib_data_ili7807e_1080p_video_mode_dsi_panel.xml /data/vendor/display/qdcm_calib_data_ili7807e_1080p_video_mode_dsi_panel.xml
+	chown system system /data/vendor/display/qdcm_calib_data_ili7807e_1080p_video_mode_dsi_panel.xml
+	chmod 664 /data/vendor/display/qdcm_calib_data_ili7807e_1080p_video_mode_dsi_panel.xml
+
+on property:sys.qdcm.configxml=1
+	chown system system /data/vendor/display/qdcm_calib_data_ft8716_1080p_video_mode_dsi_panel_pl2.xml
+	chmod 664 /data/vendor/display/qdcm_calib_data_ft8716_1080p_video_mode_dsi_panel_pl2.xml
+	chown system system /data/vendor/display/qdcm_calib_data_ili7807e_1080p_video_mode_dsi_panel.xml
+	chmod 664 /data/vendor/display/qdcm_calib_data_ili7807e_1080p_video_mode_dsi_panel.xml
+
+service qdcm_script /vendor/bin/init.c1n.lcm.sh
+	disabled
+	class main
+	user root
+	group shell
+	oneshot

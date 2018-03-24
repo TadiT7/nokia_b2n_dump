@@ -1,0 +1,48 @@
+<HWMapTable>
+
+    <HWModel HWID="B2N" >
+    	   <ro.product.board>SDM660</ro.product.board>
+        <ro.product.brand>Unknown</ro.product.brand>
+        <ro.product.name>Bamboo</ro.product.name>
+        <ro.product.device>Bamboo</ro.product.device>
+        <ro.product.model>Bamboo</ro.product.model>
+        <ro.product.manufacturer>Bamboo</ro.product.manufacturer>
+        <ro.product.nickname>Bamboo</ro.product.nickname>
+        <ro.com.google.clientidbase> </ro.com.google.clientidbase>
+    </HWModel>  
+    
+    <HWModel HWID="B2A">
+    	   <ro.product.board>SDM660</ro.product.board>
+        <ro.product.brand>Unknown</ro.product.brand>
+        <ro.product.name>Bamboo</ro.product.name>
+        <ro.product.device>Bamboo</ro.product.device>
+        <ro.product.model>Bamboo</ro.product.model>
+        <ro.product.manufacturer>Bamboo</ro.product.manufacturer>
+        <ro.product.nickname>Bamboo</ro.product.nickname>
+        <ro.com.google.clientidbase> </ro.com.google.clientidbase>
+    </HWModel>
+    
+    <HWModel HWID="B2L">
+    	   <ro.product.board>SDM660</ro.product.board>
+        <ro.product.brand>Unknown</ro.product.brand>
+        <ro.product.name>Bamboo</ro.product.name>
+        <ro.product.device>Bamboo</ro.product.device>
+        <ro.product.model>Bamboo</ro.product.model>
+        <ro.product.manufacturer>Bamboo</ro.product.manufacturer>
+        <ro.product.nickname>Bamboo</ro.product.nickname>
+        <ro.com.google.clientidbase> </ro.com.google.clientidbase>
+    </HWModel>
+    
+    <HWModel HWID="B2C">
+    	   <ro.product.board>SDM660</ro.product.board>
+        <ro.product.brand>Unknown</ro.product.brand>
+        <ro.product.name>Bamboo</ro.product.name>
+        <ro.product.device>Bamboo</ro.product.device>
+        <ro.product.model>Bamboo</ro.product.model>
+        <ro.product.manufacturer>Bamboo</ro.product.manufacturer>
+        <ro.product.nickname>Bamboo</ro.product.nickname>
+        <ro.com.google.clientidbase> </ro.com.google.clientidbase>
+    </HWModel>
+    
+	
+</HWMapTable>

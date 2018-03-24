@@ -1,0 +1,33 @@
+on fs
+#   /*+++FIH:StanleyCheng 2011/12/20+++*/
+# Mount virtual cd-rom.
+    chown system hidden /hidden
+    chown system hidden /vendor/hidden
+    restorecon_recursive /hidden
+    restorecon_recursive /vendor/hidden
+
+# Mount CDA image.
+    chown system system /hidden/data
+    chown system system /vendor/hidden/data
+    restorecon_recursive /hidden/data
+    restorecon_recursive /vendor/hidden/data
+
+# Set /vendor/hidden /vendor/hidden/data directory permission
+    chmod 0551 /hidden
+    chmod 0551 /vendor/hidden
+    chmod 0551 /hidden/data
+    chmod 0551 /vendor/hidden/data
+    mkdir /hidden/data/CDALog 0755 system system
+    mkdir /vendor/hidden/data/CDALog 0755 system system
+    exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qcom.pre-cda.sh
+
+on property:sys.boot_completed=1
+    losetup /dev/block/cdrom-loop /hidden/custom.iso
+    write /sys/devices/soc/78db000.usb/msm_hsusb/gadget/lun0/file /dev/block/cdrom-loop
+    restorecon_recursive /dev/block/cdrom-loop
+    mkdir /data/app/preload 0771 system system
+
+# /data/misc/cust
+    mkdir /data/misc/cust 0771 system system
+    chown system system /data/misc/cust
+    restorecon_recursive /data/misc/cust

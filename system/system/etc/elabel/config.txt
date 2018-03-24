@@ -1,0 +1,2 @@
+partition_size=16777216
+format=ext4

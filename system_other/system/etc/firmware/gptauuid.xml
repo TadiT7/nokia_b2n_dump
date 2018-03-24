@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+http://www.ietf.org/rfc/rfc4122.txt
+-->
+
+
+<image_list>
+
+  <image name="ifaata.mbn">
+    <uuid>"08010203-0000-0000-0000000000003332"</uuid>
+    <info>"Alipay GP Sec App"</info>
+  </image>
+
+  <image name="ifaatagx.mbn">
+    <uuid>"08010203-0000-0000-0000000000003333"</uuid>
+    <info>"Alipay GP Sec App"</info>
+  </image>
+
+  <image name="ifaatael.mbn">
+    <uuid>"08010203-0000-0000-00000000000003334"</uuid>
+    <info>"Alipay GP Sec App"</info>
+  </image>
+
+</image_list>

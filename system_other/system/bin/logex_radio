@@ -1,0 +1,5 @@
+#! /system/bin/sh
+#/system/bin/logcat -f /data/logs/logex_main -r 8192 -n 5 -v threadtime -b main *:V
+RadioCommand="/system/bin/logcat `getprop logex.radio.command`"
+echo $RadioCommand
+eval $RadioCommand

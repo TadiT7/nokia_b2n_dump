@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+	<feature name="com.fihtdc.DataCollect" />
+ 	<library name="com.fihtdc.DataCollect"
+          	 file="/system/framework/DataCollectLib.jar"/>
+
+	<feature name="com.evenwell.DataCollect" />
+ 	<library name="com.evenwell.DataCollect"
+          	 file="/system/framework/DataCollectLib.jar"/>
+</permissions>

@@ -1,0 +1,5 @@
+on boot
+    write /data/misc/camera/is_connected.txt 0
+    chmod 0774 /data/misc/camera/is_connected.txt
+    chown cameraserver audio /data/misc/camera/is_connected.txt
+    chmod 0771 /data/misc/camera

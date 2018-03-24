@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="PowerLog">on</entry>
+<entry key="PwrRTCal">on</entry>
+<entry key="PwrChargingRec">on</entry>
+<entry key="NetData">on</entry>
+<entry key="CPUtemp">off</entry>
+<entry key="Current">off</entry>
+<entry key="BigCurrent">off</entry>
+<entry key="ScreenState">off</entry>
+<entry key="SignalStrength">off</entry>
+<entry key="Brightness">on</entry>
+<entry key="BrightnessNP">off</entry>
+<entry key="Charging">off</entry>
+<entry key="Plugged">off</entry>
+<entry key="Voltage">on</entry>
+<entry key="BatteryHealth">on</entry>
+<entry key="TopAP">on</entry>
+<entry key="CPUFreqUsage">off</entry>
+<entry key="WifiState">on</entry>
+<entry key="GPSState">off</entry>
+<entry key="BTState">off</entry>      
+<entry key="NFCState">on</entry>
+<entry key="VoiceCallState">off</entry>
+<entry key="SoftApState">on</entry>    
+<entry key="BTTethering">off</entry>
+<entry key="BatteryUsage">on</entry>
+<entry key="PmixKeepDay">14</entry>
+<entry key="UploadTime">2350</entry>
+<entry key="SystemLogging">off</entry>
+<entry key="SystemLogRotate">5</entry>
+<entry key="PowerMixDeveloperMode">on</entry>
+<entry key="RealTimeAlert">on</entry>
+<entry key="CPUInterrupt">on</entry>
+<entry key="GetTopAppMemInfoDelay">5000</entry>
+</properties>

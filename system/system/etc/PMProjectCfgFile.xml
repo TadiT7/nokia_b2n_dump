@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="VF_CPU_TEMP">/sys/class/thermal/thermal_zone15/temp</entry>
+<entry key="VF_SENSER_PA_TEMP">/sys/class/thermal/thermal_zone2/temp;/sys/class/thermal/thermal_zone7/temp</entry>
+<entry key="VF_SENSER_PMIC_TEMP">/sys/class/thermal/thermal_zone3/temp;/sys/class/thermal/thermal_zone6/temp</entry>
+<entry key="VF_BATTERY_CHARG_FULL_DESIGN">/sys/class/power_supply/bms/charge_full_design</entry>
+<entry key="VF_BATTERY_CHARG_FULL">/sys/class/power_supply/bms/charge_full</entry>
+<entry key="VF_BATTERY_CYCLE_COUNT">/sys/class/power_supply/bms/cycle_count</entry>
+<entry key="VF_BRIGHTNESS">/sys/class/leds/lcd-backlight/brightness</entry>
+<entry key="VF_BATTERY_CUR">/sys/class/power_supply/battery/current_now</entry>
+<entry key="VF_BATTERY_LEVEL">/sys/class/power_supply/battery/capacity</entry>
+<entry key="VF_BATTERY_CHARGING_CUR">/sys/class/power_supply/battery/input_current_max</entry>
+<entry key="BAT_TEMP_THRESHOLD">50.1</entry>
+<entry key="HIGH_CONSUMPTION_PER_TIME_SLOT">120</entry>
+<entry key="BIG_CURRENT_CHARGE_THRESHOLD">1700</entry>
+<entry key="BIG_CURRENT_DISCHARGE_THRESHOLD">1200</entry>
+<entry key="CURRENT_CHARGING">-</entry>
+<entry key="SHIPPING">false</entry>
+</properties>
+

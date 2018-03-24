@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- These are configurations that must exist on all Android devices. -->
+<config>
+    <!-- add by EddieKHChang 20170717 for background limits start -->
+    <!-- for CustManager -->
+    <allow-implicit-broadcast action="com.android.launcher3.intent.ACTION_PAI_START" />
+    <allow-implicit-broadcast action="com.android.launcher3.intent.ACTION_PAI_FINISH" />
+    <allow-implicit-broadcast action="android.intent.action.SIM_STATE_CHANGED" />
+    <allow-implicit-broadcast action="com.fihtdc.mcfg.MCFG_DOWNLOAD_COMPLETE" />
+    <allow-implicit-broadcast action="com.evenwell.custmanager.UPDATE_CARRIER_APN" />
+     <!-- for DeviceMonitorControl -->
+    <allow-implicit-broadcast action="com.fihtdc.action.DMC.Request.ReportValue" />
+    <allow-implicit-broadcast action="action.pushlib.server_connected" />
+    <allow-implicit-broadcast action="com.fihtdc.action.AP.intent.DMC.ReportValue" />
+    <allow-implicit-broadcast action="com.fihtdc.action.AP.intent.DMC.NonSystem.ReportValue" />
+      <!-- for StabilityMonitor -->
+    <allow-implicit-broadcast action="fih.dbgcfgtool.change_qxdm_prefernce_setting" />
+    <allow-implicit-broadcast action="fih.dbgcfgtool.UPDATE_LOG_CONFIG" />
+    <allow-implicit-broadcast action="com.fihtdc.AprUploadService.BootComplete" />
+    <allow-implicit-broadcast action="fih.dbgcfgtool.DMC" />
+    <allow-implicit-broadcast action="android.intent.action.DROPBOX_ENTRY_ADDED" />
+    <!--for AprUploadService-->
+    <allow-in-power-save package="com.evenwell.AprUploadService" />
+    <allow-implicit-broadcast action="android.intent.action.ACTION_SHUTDOWN" />
+    <!-- add by EddieKHChang 20170717 for background limits End -->
+</config>

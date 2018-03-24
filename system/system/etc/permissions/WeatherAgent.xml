@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <allow-in-power-save package="com.evenwell.weatherservice" />
+    <allow-in-data-usage-save package="com.evenwell.weatherservice" />
+</permissions>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Please do not change this file without throughly reading the parsing codes.
+    It is affected many assumptions if its arrangement is changed.
+-->
+<root>
+        <!-- true = 1, false = 0 -->
+        <powersaving_db_main>0</powersaving_db_main>
+        <powersaving_db_cpu_policy>1</powersaving_db_cpu_policy>
+        <powersaving_db_screen_policy>1</powersaving_db_screen_policy>
+        <powersaving_db_data_connection>1</powersaving_db_data_connection>
+        <powersaving_db_periodic_wakeup>0</powersaving_db_periodic_wakeup>
+        <powersaving_db_lpm>1</powersaving_db_lpm>
+        <powersaving_db_ss>1</powersaving_db_ss>
+
+        <!-- KEEP/OFF -->
+        <powersaving_db_power_saving_begin>15</powersaving_db_power_saving_begin>
+        <powersaving_db_power_saving_extreme>5</powersaving_db_power_saving_extreme>
+        <powersaving_db_wifi>OFF</powersaving_db_wifi>
+        <powersaving_db_bt>OFF</powersaving_db_bt>
+        <powersaving_db_gps>OFF</powersaving_db_gps>
+        <powersaving_db_auto_sync>OFF</powersaving_db_auto_sync>
+        <powersaving_db_mobile_data>OFF</powersaving_db_mobile_data>
+        <powersaving_db_haptic_feedback>OFF</powersaving_db_haptic_feedback>
+        <powersaving_db_3d_sound>OFF</powersaving_db_3d_sound>
+        <powersaving_db_screen_timeout>15000</powersaving_db_screen_timeout>
+        <powersaving_db_backlight>10</powersaving_db_backlight>
+        <powersaving_db_ss_wifi>OFF</powersaving_db_ss_wifi>
+        <powersaving_db_ss_hotspot>OFF</powersaving_db_ss_hotspot>
+        <powersaving_db_wifihotspot>OFF</powersaving_db_wifihotspot>
+        <!--added by ken -->
+        <powersaving_db_autosync>OFF</powersaving_db_autosync>
+        <powersaving_db_monochromacy>ON</powersaving_db_monochromacy>
+        <powersaving_db_glance>OFF</powersaving_db_glance>
+        <powersaving_db_screen_light>OFF</powersaving_db_screen_light>
+        <powersaving_db_data_connection_new>OFF</powersaving_db_data_connection_new>
+        <powersaving_db_smart_switch>OFF</powersaving_db_smart_switch>
+        <powersaving_db_screen_resolution>OFF</powersaving_db_screen_resolution>
+        <powersaving_db_screen_bam>ON</powersaving_db_screen_bam>
+        <powersaving_db_cpu_limit>ON</powersaving_db_cpu_limit>
+         <!--added by ken -->
+
+        <!-- ON/OFF -->
+       <powersaving_db_dc_alwayson>ON</powersaving_db_dc_alwayson>
+        <powersaving_db_dc_start_time>08:00</powersaving_db_dc_start_time>
+        <powersaving_db_dc_end_time>24:00</powersaving_db_dc_end_time>
+        <powersaving_db_dc_white_list> </powersaving_db_dc_white_list>
+        <powersaving_db_pw_time>1800000</powersaving_db_pw_time>
+        <powersaving_db_pw_white_list> </powersaving_db_pw_white_list>
+        <powersaving_db_pw_hide_list>android;com.fihtdc.ironnotifyled;com.fihtdc.powersaving.g3;com.android.deskclock;com.android.calendar;com.qualcomm.wifip2p.service;com.qualcomm.timeservice;com.fihtdc.calendarwidget;com.android.cellbroadcastreceiver;com.android.providers.calendar;com.android.onetimeinitializer;com.android.providers.settings;com.android.DateTimeSetup;com.android.nfc;com.fihtdc.wirelesscharging;com.qualcomm.wfd.service;com.qualcomm.fastdormancy;com.android.phone;com.android.keyguard;com.fihtdc.lockscreen;com.fihtdc.batteryprotect;com.mediatek.schpwronoff;com.evenwell.ironnotifyled;com.evenwell.powersaving.g3;com.evenwell.calendarwidget;com.evenwell.wirelesscharging;com.evenwell.lockscreen;com.evenwell.batteryprotect;</powersaving_db_pw_hide_list>
+        <powersaving_db_pw_remove_list>com.android.deskclock;com.android.calendar;calendar;com.mediatek.schpwronoff;</powersaving_db_pw_remove_list>
+        <powersaving_db_support_lpa>FCNJ;VKY;IVM;VK3;VN2;</powersaving_db_support_lpa>
+        <powersaving_db_wifi_timeout>5</powersaving_db_wifi_timeout>
+        <powersaving_db_hotspot_timeout>5</powersaving_db_hotspot_timeout>
+        <powersaving_db_dc_detect_time>60000</powersaving_db_dc_detect_time>
+        <powersaving_db_support_cpu>FCNJ;VKY;IVM;VK3;VNA;D78;D70;D7T;D75;D77;PHX;VN2;VN3;JGR;D1C</powersaving_db_support_cpu>
+        <powersaving_db_service_detect>ON</powersaving_db_service_detect>
+        <powersaving_db_service_detect_time>180000</powersaving_db_service_detect_time>
+        <powersaving_db_ss_show_hotspot>YES</powersaving_db_ss_show_hotspot>
+        <powersaving_db_qcom_chip_name>MSM;msm;APQ;apq;</powersaving_db_qcom_chip_name>
+        <powersaving_db_battery_change_intent_min_interval>6000</powersaving_db_battery_change_intent_min_interval>
+        <powersaving_start_service_method>start_use_intent</powersaving_start_service_method>
+        <powersaving_start_service_delay_time>500</powersaving_start_service_delay_time>
+        <powersaving_store_settings_method>store_in_self_db</powersaving_store_settings_method>
+        <powersaving_not_support_screen_policy>P1X</powersaving_not_support_screen_policy>
+        <powersaving_support_tg_gui>JGR</powersaving_support_tg_gui>
+
+        <!-- Below for Android 5.0 -->
+        <powersaving_db_animation>OFF</powersaving_db_animation>
+        <powersaving_db_limit_vibrate>OFF</powersaving_db_limit_vibrate>
+        <powersaving_db_restrict_bd>OFF</powersaving_db_restrict_bd>
+        <powersaving_support_doze_mode>ON</powersaving_support_doze_mode>
+
+        <powersaving_server>https://dcs.c2dms.com/api/v1/</powersaving_server>
+
+        <!-- Below for close function on doze -->
+        <!-- All setting is Glance,DoubleTap,Data,Wifi,Bluetooth,AutoSync,WifiScan,BluetoothScan,GPS,DataSaver -->
+        <!--<powersaving_deep_close_function>Bluetooth,AutoSync,WifiScan,BluetoothScan,GPS</powersaving_deep_close_function>
+          <powersaving_light_close_function>DataSaver</powersaving_light_close_function>-->
+        <powersaving_stop_close_function_package>com.android.cts.net.hostside,com.android.cts.net.hostside.app2</powersaving_stop_close_function_package>
+        <powersaving_deep_close_function>Bluetooth,AutoSync,WifiScan,BluetoothScan</powersaving_deep_close_function>
+        <powersaving_light_close_function></powersaving_light_close_function>
+
+        <!-- Below is for set doze mode parameter for android N-->
+        <dozeTimeout>light_pre_idle_to=300000,idle_after_inactive_to=900000</dozeTimeout>
+
+        <!--NORMAL = 0 , INACTIVE = -1 , EXTREME = 1 -->
+        <powersaving_db_power_saving_mode>-1</powersaving_db_power_saving_mode>
+        <powersaving_db_time_schedule>0</powersaving_db_time_schedule>
+        <powersaving_db_time_schedule_mode>0</powersaving_db_time_schedule_mode>
+        <powersaving_db_time_schedule_start_time>22:30</powersaving_db_time_schedule_start_time>
+        <powersaving_db_time_schedule_end_time>06:30</powersaving_db_time_schedule_end_time>
+        <powersaving_db_process_monitor>1</powersaving_db_process_monitor>
+</root>

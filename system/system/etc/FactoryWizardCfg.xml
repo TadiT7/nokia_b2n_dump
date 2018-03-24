@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Please do not change this file without throughly reading the parsing codes.
+    It is affected many assumptions if its arrangement is changed.
+-->
+<root>
+        <setupwizard_default_launcher>com.evenwell.foxlauncher/com.fihtdc.foxlauncher.Launcher</setupwizard_default_launcher>
+		<factory_brightness>30</factory_brightness>
+        <factory_autoshutdown_time>30</factory_autoshutdown_time>
+        <factory_background_color>#FFFFFF</factory_background_color>
+        <factory_page_show>show</factory_page_show>
+		<factory_tpversion_path>/proc/AllHWList/tp_fw_ver</factory_tpversion_path>
+		<!--<factory_support_imei>false</factory_support_imei> -->
+		<!--<factory_wating_time>15</factory_wating_time> -->
+		<!--<factory_sw_info_path>/system/etc/fver</factory_sw_info_path> -->
+		<!--<factory_enable_wifiap>true</factory_enable_wifiap> -->
+</root>

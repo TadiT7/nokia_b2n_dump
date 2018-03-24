@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!--
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ */
+-->
+<alwaysallow-pkgs>
+    <!-- FIH Test package -->
+    <pkg name="com.fihtdc.fqc"/>
+    <pkg name="com.tools.runin"/>
+    <!-- CTA always allow package -->
+    <pkg name="com.android.settings"/>
+    <pkg name="com.android.systemui"/>
+    <pkg name="com.android.phone"/>
+    <pkg name="com.fihtdc.lockscreen"/>
+    <pkg name="com.fihtdc.InfocusSetupWizard"/>    
+    <pkg name="com.fihtdc.powersaving.g3"/>
+    <pkg name="com.fihtdc.UsageStatsLogReceiver"/>
+    <pkg name="com.evenwell.lockscreen"/>
+    <pkg name="com.evenwell.InfocusSetupWizard"/>    
+    <pkg name="com.evenwell.SetupWizard"/>    
+    <pkg name="com.evenwell.powersaving.g3"/>
+    <pkg name="com.evenwell.UsageStatsLogReceiver"/>
+    <pkg name="com.evenwell.factorywizard"/>    
+    <!-- move from whitelist -->
+    <pkg name="com.tencent.mm"/>
+    <pkg name="com.evenwell.voicenote"/>
+    <pkg name="com.android.calculator2"/>
+    <pkg name="com.evenwell.hyperclip"/>
+    <pkg name="com.nbc.music"/>
+    <pkg name="com.evenwell.android.memo"/>
+    <pkg name="com.evenwell.weather"/>    
+    <!-- CTS -->
+    <pkg name="com.android.cts"/>
+    <!-- SMS Backuptool -->
+    <pkg name="com.riteshsahu.SMSBackupRestore"/>
+</alwaysallow-pkgs>

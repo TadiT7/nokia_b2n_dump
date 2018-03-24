@@ -1,0 +1,16 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.secure=1
+security.perf_harden=1
+ro.adb.secure=1
+ro.allow.mock.location=0
+ro.debuggable=0
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Fri Nov 3 03:44:36 CST 2017
+ro.bootimage.build.date.utc=1509651876
+ro.bootimage.build.fingerprint=FIH/B2N_00CN_MCDA/B2N:8.0.0/OPR1.170623.026/00CN_1_110:user/dev-keys
+persist.sys.usb.config=none
+

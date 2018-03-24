@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Please do not change this file without throughly reading the parsing codes.
+    It is affected many assumptions if its arrangement is changed.
+-->
+<root>
+        <setupwizard_default_launcher>com.android.launcher3/com.android.searchlauncher.SearchLauncher</setupwizard_default_launcher>
+        <Brand>TG</Brand>
+        <Carrier>FIH Generic;SK Telecom</Carrier>
+        <Locale>TAIWAN, REPUBLIC OF CHINA; WorldWide</Locale>
+        <factory_brightness>30</factory_brightness>
+        <factory_autoshutdown_time>30</factory_autoshutdown_time>
+        <factory_background_color>#FFFFFF</factory_background_color>
+        <factory_page_show>show</factory_page_show>
+		<factory_tpversion_path>/proc/AllHWList/Touch</factory_tpversion_path>
+</root>

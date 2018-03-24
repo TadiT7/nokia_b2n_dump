@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Wallpaper>
+    <project name="default">
+        <sku id="default">
+            <item name="ACTION_PARTNER_CUSTOMIZATION">com.evenwell.foxlauncher.action.PARTNER_CUSTOMIZATION</item>
+            <item name="default_property">B</item>
+            <mapping-wallpaper type="propertyWallpaper" value="M">onyx</mapping-wallpaper><!-- Copper -->
+            <mapping-wallpaper type="propertyWallpaper" value="B">onyx</mapping-wallpaper><!-- Matte black -->
+            <mapping-wallpaper type="propertyWallpaper" value="S">nightflight</mapping-wallpaper><!-- Silver -->
+            <mapping-wallpaper type="propertyWallpaper" value="L">luminescence</mapping-wallpaper><!-- Tempered blue -->
+            <mapping-wallpaper type="propertyWallpaper" value="W">icetexture</mapping-wallpaper>--><!-- White -->
+        </sku>
+    </project>
+</Wallpaper>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<whitelist-pkgs>
+    <pkg name="com.tencent.mm"/>
+    <pkg name="com.evenwell.voicenote"/>
+    <pkg name="com.android.calculator2"/>
+    <pkg name="com.evenwell.hyperclip"/>
+    <pkg name="com.nbc.music"/>
+    <pkg name="com.evenwell.android.memo"/>
+    <pkg name="com.evenwell.weather"/>
+</whitelist-pkgs>
+

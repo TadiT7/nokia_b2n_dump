@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Feature for devices with an hall sensor. -->
+<permissions>
+    <feature name="com.fihtdc.hardware.sensor.hall" />
+</permissions>

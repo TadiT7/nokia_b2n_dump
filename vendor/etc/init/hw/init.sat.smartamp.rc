@@ -1,0 +1,10 @@
+# smartamp bootup init
+service amp-init-sh /vendor/bin/init.sat.smartamp.sh
+	disabled
+	class core
+	user root
+	oneshot
+
+on property:sys.boot_completed=1
+	start amp-init-sh
+

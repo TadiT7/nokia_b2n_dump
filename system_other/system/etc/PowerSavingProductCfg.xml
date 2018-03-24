@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+		<!-- Normal mode limit speed list (for all clusters) -->
+		<!-- Format : [cluster 1 value];[cluster 2 value];... [cluster N value] -->
+        <!-- Example : <powersaving_normal_mode_cpu_limit_speed_list>0x579;0x6D3</powersaving_normal_mode_cpu_limit_speed_list> -->	
+		<powersaving_normal_mode_cpu_limit_speed_list>0x759;0x600</powersaving_normal_mode_cpu_limit_speed_list> <!-- 1881MHz;1536MHz -->
+		
+		<!-- Extreme mode limit speed list (for all clusters) -->
+		<!-- Format : [cluster 1 value];[cluster 2 value];... [cluster N value] -->
+		<!-- Example : <powersaving_extreme_mode_cpu_limit_speed_list>0x579;0x6D3</powersaving_extreme_mode_cpu_limit_speed_list> -->
+		<powersaving_extreme_mode_cpu_limit_speed_list>0x686;0x446</powersaving_extreme_mode_cpu_limit_speed_list> <!-- 1670MHz;1094MHz -->
+
+		<!-- PerfLock API 1st opcode list (for all clusters) -->
+		<!-- Format : [cluster 1 value];[cluster 2 value];... [cluster N value] -->
+		<!-- Example : <powersaving_cpu_limit_opcode_1_list>0x41004100;0x41004000</powersaving_cpu_limit_opcode_1_list> -->
+		<powersaving_cpu_limit_opcode_1_list>0x41004000;0x41004100</powersaving_cpu_limit_opcode_1_list>
+		
+		<!-- PerfLock API 2nd opcode list (for all clusters) -->
+		<!-- Format : [cluster 1 value];[cluster 2 value];... [cluster N value] -->
+		<!-- Example : <powersaving_cpu_limit_opcode_2_list>0x40804100;0x40804000</powersaving_cpu_limit_opcode_2_list> -->
+		<powersaving_cpu_limit_opcode_2_list>0x40804000;0x40804100</powersaving_cpu_limit_opcode_2_list>
+		
+		<!-- AMOLED display -->
+		<!-- Format : true/false -->
+		<!-- Example : <powersaving_amoled_display>true</powersaving_amoled_display> -->
+		<powersaving_amoled_display>false</powersaving_amoled_display>
+		
+		<!-- Normal mode save time list -->
+		<!-- Format : [level 0 value];[level 1 value];... [level 19 value] --> <!-- battery low ~ high --> <!-- millisecond -->
+		<!-- Example : <powersaving_normal_mode_save_time_list>10;20;30;40;50;60;70;80;90;100;110;120;130;140;150;160;170;180;190;200</powersaving_normal_mode_save_time_list> -->
+		<!-- <powersaving_normal_mode_save_time_list>1000000;2000000;3000000;4000000;5000000;6000000;7000000;8000000;9000000;10000000;11000000;12000000;13000000;14000000;15000000;16000000;17000000;18000000;19000000;20000000</powersaving_normal_mode_save_time_list> -->
+		<!-- <powersaving_normal_mode_save_time_list>14;28;42;56;70;84;98;112;126;140;154;168;182;196;210;224;238;252;266;280</powersaving_normal_mode_save_time_list> -->
+		<powersaving_normal_mode_save_time_list>168000;336000;504000;672000;840000;1008000;1176000;1344000;1512000;1680000;1848000;2016000;2184000;2352000;2520000;2688000;2856000;3024000;3192000;3360000</powersaving_normal_mode_save_time_list>
+		
+		<!-- Extreme mode save time list -->
+		<!-- Format : [level 0 value];[level 1 value];... [level 19 value] --> <!-- battery low ~ high --> <!-- millisecond -->
+		<!-- Example : <powersaving_extreme_mode_save_time_list>10;20;30;40;50;60;70;80;90;100;110;120;130;140;150;160;170;180;190;200</powersaving_extreme_mode_save_time_list> -->
+		<!-- <powersaving_extreme_mode_save_time_list>10000000;20000000;30000000;40000000;50000000;60000000;70000000;80000000;90000000;100000000;110000000;120000000;130000000;140000000;150000000;160000000;170000000;180000000;190000000;200000000</powersaving_extreme_mode_save_time_list> -->
+		<!-- <powersaving_extreme_mode_save_time_list>15.5;31;46.5;62;77.5;93;108.5;124;139.5;155;170.5;186;201.5;217;232.5;248;263.5;279;294.5;310</powersaving_extreme_mode_save_time_list> -->
+		<powersaving_extreme_mode_save_time_list>186000;372000;558000;744000;930000;1116000;1302000;1488000;1674000;1860000;2046000;2232000;2418000;2604000;2790000;2976000;3162000;3348000;3534000;3720000</powersaving_extreme_mode_save_time_list>
+</root>

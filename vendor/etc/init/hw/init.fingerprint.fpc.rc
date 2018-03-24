@@ -1,0 +1,16 @@
+on post-fs-data
+    mkdir /data/fpc 0700 system system
+    chown system system /sys/devices/soc/soc:fpc1020/irq
+    chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
+
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
+
+service fqcfingerprint /vendor/bin/fqcfingerprint
+	user root
+	oneshot
+	disabled
+
+on property:debug.sys.fqcfingerprint=1
+	start fqcfingerprint

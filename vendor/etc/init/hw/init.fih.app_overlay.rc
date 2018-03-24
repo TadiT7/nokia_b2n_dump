@@ -1,0 +1,3 @@
+on post-fs-data
+    mkdir /data/app-overlay 0771 system system
+    restorecon_recursive /data/app-overlay

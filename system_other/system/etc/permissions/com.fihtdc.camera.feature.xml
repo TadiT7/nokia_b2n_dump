@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <!-- FIH QC Camera Feature -->
+    <feature name="com.fihtdc.camera.feature.qc.BurstFlow" />
+	<feature name="com.fihtdc.camera.feature.qc.ZSL" />
+	<feature name="com.fihtdc.camera.feature.qc.hdr" />
+  
+    <!-- Arcsoft Camera Feature -->
+    <!-- Arcsoft 20140114 Effect Filters SDK 1.5.1.8 -->
+    <!--<feature name="com.fihtdc.camera.feature.arcsoft.ArcSoftBlinkDetection" />-->
+    <!--<feature name="com.fihtdc.camera.feature.arcsoft.ArcSoftDynamicLighting" />-->
+    <!--<feature name="com.fihtdc.camera.feature.arcsoft.ArcSoftFaceTracking" />-->
+    <feature name="com.fihtdc.camera.feature.qc.FaceDetection" />
+    <!-- Mask when Access FaceBeauty turn on  -->
+    <feature name="com.fihtdc.camera.feature.arcsoft.ArcSoftSkinSoften" />
+                                                                 
+    <!--<feature name="com.fihtdc.camera.feature.arcsoft.ArcSoftHDR" /> -->         
+    <!--<feature name="com.fihtdc.camera.feature.arcsoft.ArcSoftObjectTracking" />-->
+    <feature name="com.fihtdc.camera.feature.arcsoft.ArcSoftPVC" />
+    <!--<feature name="com.fihtdc.camera.feature.arcsoft.ArcSoftSmileDetection" />-->
+    <!-- Arcsoft 20140221 Effect Filter SDK v1.5.1.9 fix some Effect function force close isssue -->
+    <!--<feature name="com.fihtdc.camera.feature.arcsoft.ArcSoftColorEffect" />-->
+    <feature name="com.fihtdc.camera.feature.arcsoft.SmartDenoise" />
+    <feature name="com.fihtdc.camera.feature.arcsoft.NightShot" />
+
+    <!-- 2015.04.29 Turn on SDN Auto setting -->
+    <feature name="com.fihtdc.camera.feature.fih.IsoMetaData" />
+    <feature name="com.fihtdc.camera.feature.FrontCameraFlash"/>
+
+    <!-- :::Arcsoft Still not work feature -->
+    
+    <!-- Access Camera Feature -->
+    <!--<feature name="com.fihtdc.camera.feature.access.GroupShot" /> -->
+    <!--<feature name="com.fihtdc.camera.feature.access.ObjEraser" /> -->
+    <!--<feature name="com.fihtdc.camera.feature.access.CinemaGraph" />     -->
+    <!--<feature name="com.fihtdc.camera.feature.access.StroboPhto" />  -->
+    <!--
+    <feature name="com.fihtdc.camera.feature.access.FaceBeauty" /> 
+    <feature name="com.fihtdc.camera.feature.access.FaceBeautyCaptureOnly" />
+    -->    
+    <!-- :::Access Still not work feature -->
+    <!--
+    <feature name="com.fihtdc.camera.feature.access.NightPortrait" />
+    -->
+    
+	<!-- morpho outfocus -->
+	<!-- <feature name="com.fihtdc.camera.feature.morpho.outfocus" />   -->
+
+</permissions>

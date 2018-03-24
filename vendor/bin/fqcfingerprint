@@ -1,0 +1,127 @@
+#!/system/bin/sh
+
+FP_AUTOTEST_LOGCAT_LOG="/data/FP_AUTOTEST_LOGCAT.log"
+FP_AUTOTEST_LOG="/data/system/fingerprint/elan_fp_autotest.log"
+FP_CHECKERBOARDTEST="/data/system/fingerprint/elan_fp_checkerboardtest.log"
+vendor=$(/vendor/bin/getprop ro.boot.fp)
+parameter_1=$(vendor/bin/getprop debug.sys.fqcfingerprint)
+setprop debug.sys.fqcfpret 0
+
+fingerprint_selftest() {
+	logcat -v time -b all > $FP_AUTOTEST_LOGCAT_LOG &
+	if [ "$vendor" = "gxfp5288_c1n" ]; then
+		case "$parameter_1" in
+			"1")
+				echo "FPM selstest"
+				gf_cmd_test_gxfp5288_c1n 1 > /dev/null
+				ret=$?
+				;;
+			"2")
+				echo "FPM touch test"
+				gf_cmd_test_gxfp5288_c1n 2 > /dev/null
+				ret=$?
+				;;
+			"3")
+				echo "FPM SNR test"
+				gf_cmd_test_gxfp5288_c1n 3 > /dev/null
+				ret=$?
+				;;
+			*)
+				echo "just test"
+				gf_cmd_test_gxfp5288_c1n > /dev/null
+				ret=$?
+				;;
+		esac
+		echo "ret=$ret"
+		/vendor/bin/setprop debug.sys.fqcfpret $ret
+	elif [ "$vendor" = "gxfp5288_sd1" ]; then
+		case "$parameter_1" in
+			"1")
+				echo "FPM selstest"
+				gf_cmd_test_gxfp5288_sd1 1 > /dev/null
+				ret=$?
+				;;
+			"2")
+				echo "FPM touch test"
+				gf_cmd_test_gxfp5288_sd1 2 > /dev/null
+				ret=$?
+				;;
+			"3")
+				echo "FPM touch test"
+				gf_cmd_test_gxfp5288_sd1 3 > /dev/null
+				ret=$?
+				;;
+			"4")
+				echo "FPM touch test"
+				gf_cmd_test_gxfp5288_sd1 4 > /dev/null
+				ret=$?
+				;;
+			*)
+				echo "just test"
+				gf_cmd_test_gxfp5288_sd1 > /dev/null
+				ret=$?
+				;;
+		esac
+		echo "ret=$ret"
+		/vendor/bin/setprop debug.sys.fqcfpret $ret
+	elif [ "$vendor" = "gxfp3208_b2n" ]; then
+		case "$parameter_1" in
+			"1")
+				echo "FPM selstest"
+				gf_cmd_test_gxfp3208_b2n 1 > /dev/null
+				ret=$?
+				;;
+			"2")
+				echo "FPM touch test"
+				gf_cmd_test_gxfp3208_b2n 2 > /dev/null
+				ret=$?
+				;;
+			"3")
+				echo "FPM SNR test"
+				gf_cmd_test_gxfp3208_b2n 3 > /dev/null
+				ret=$?
+				;;
+			*)
+				echo "just test"
+				gf_cmd_test_gxfp3208_b2n > /dev/null
+				ret=$?
+				;;
+		esac
+		echo "ret=$ret"
+		/vendor/bin/setprop debug.sys.fqcfpret $ret
+	elif [ "$vendor" = "elan" ]; then
+		ElanPrintf test_tool interface > $FP_AUTOTEST_LOG
+		ElanPrintf test_tool cal 800 14200 > $FP_CHECKERBOARDTEST
+		if [ "$(cat $FP_AUTOTEST_LOG | grep -i 'Pass')" != "" ] && [ "$(cat $FP_CHECKERBOARDTEST | grep -i 'Pass')" != "" ]; then
+			echo "Self Test Pass"
+			echo "OpenShort Pass"
+			echo "SMT Tests all Success"
+			ElanPrintf woemode
+			/vendor/bin/setprop debug.sys.fqcfpret 1
+			return 1
+		else
+			echo "OpenShort Fail"
+			echo "Self Test Fail"
+			echo "SMT Tests all Fail"
+			/vendor/bin/setprop debug.sys.fqcfpret 0
+			return 0
+		fi
+	else
+		/system/bin/fpc_tee_test -b > /dev/null
+		checkerboardtest=$?
+		/vendor/bin/setprop debug.sys.fqcfpret $checkerboardtest
+		busybox killall logcat busybox
+
+		if [ "$checkerboardtest" -eq "0" ]; then
+			return_info
+		elif [ "$checkerboardtest" -eq "1" ]; then
+			echo "ErrorCode=$checkerboardtest"
+			return_info " Failed"
+		else
+			echo "ErrorCode=$checkerboardtest"
+			return_info " Failed"
+		fi
+	fi
+}
+
+fingerprint_selftest

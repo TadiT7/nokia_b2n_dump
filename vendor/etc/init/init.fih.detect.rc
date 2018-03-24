@@ -1,0 +1,6 @@
+# create filesystems if necessary
+service check_sys /vendor/bin/fih_signature -c /system
+        class core
+        user root
+        group root
+        oneshot
