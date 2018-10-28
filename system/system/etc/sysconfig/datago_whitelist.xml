@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <!-- SW3_JC_DataGo -->
+	<!-- <system-user-whitelist-app package="com.hmdglobal.datago" /> -->
+	<allow-in-power-save package="com.hmdglobal.datago" />
+    <!-- SW3_JC_DataGo -->
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018 FIH (Foxconn International Holdings) Inc.
+-->
+
+<!-- These are configurations that must exist on all Android devices. -->
+<config>
+    <!-- +{SW3-AK-ENTITLEMENT_SERVICE -->
+    <!-- <system-user-whitelist-app package="com.hmdglobal.entitlementservice" /> -->
+    <allow-in-power-save package="com.hmdglobal.entitlementservice" />
+    <!-- SW3-AK-ENTITLEMENT_SERVICE}+ -->
+</config>

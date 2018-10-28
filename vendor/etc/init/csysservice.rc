@@ -1,0 +1,16 @@
+# create filesystems if necessary
+service check_sys /vendor/bin/csysservice -c /system
+        class core
+        user root
+        group root
+        oneshot
+
+
+on property:sys.dev.r_status=1
+    write /proc/cda/user 1
+    
+on property:sys.dev.r_status=0
+    write /proc/cda/user 0
+
+on property:sys.dev.imgScan_status=1
+    chown system system /vendor/BBSYS/status.cfg

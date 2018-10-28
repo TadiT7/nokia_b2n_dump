@@ -1,0 +1,2 @@
+//short,open min,allnode max,allnode min,nobk max, nobk min,STDEV max, STDEV min
+:7,3200,2455,1740,4000,2600,150,0

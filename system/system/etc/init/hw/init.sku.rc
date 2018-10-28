@@ -1,0 +1,19 @@
+on fs
+    setprop ro.com.google.clientidbase android-hmd
+    setprop ro.product.brand Nokia
+    setprop ro.product.device B2N
+    setprop ro.product.first_api_level 26
+    setprop ro.product.manufacturer "HMD Global"
+    setprop ro.product.model "Nokia 7 plus"
+    setprop ro.product.name Onyx_00CN
+    setprop ro.build.flavor Onyx_00CN-user
+    setprop ro.build.product B2N
+    setprop persist.radio.sar.enabled 7
+    setprop ro.config.dbgcfgtool_config 2
+    setprop ro.product.model.num 00CN
+
+on post-fs
+    setprop media.settings.xml "product/etc/media_profiles_vendor.xml"
+on fs
+	setprop ro.build.fingerprint Nokia/Onyx_00CN/B2N:9/PPR1.180610.011/00CN_3_340:user/release-keys
+	setprop ro.build.description "Onyx_00CN-user 9 PPR1.180610.011 00CN_3_340 release-keys"

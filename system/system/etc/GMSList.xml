@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+
+<!-- GMS Data Black List-->
+
+<DISABLE-List-GMS name="com.android.vending" />
+<DISABLE-List-GMS name="com.google.android.gms" />
+<DISABLE-List-GMS name="com.google.android.configupdater"/>
+<DISABLE-List-GMS name="com.google.android.backuptransport" />
+<DISABLE-List-GMS name="com.google.android.gsf" />
+<DISABLE-List-GMS name="com.google.android.syncadapters.contacts" />
+
+<!-- List all Google App list -->
+<dependence-app name="com.google.android.configupdater" />
+<dependence-app name="com.google.android.gms" />
+<dependence-app name="com.google.android.backuptransport" />
+<dependence-app name="com.google.android.feedback" />
+<dependence-app name="com.google.android.gsf.login" />
+<dependence-app name="com.google.android.onetimeinitializer" />
+<dependence-app name="com.google.android.partnersetup" />
+<dependence-app name="com.google.android.gsf" />
+<dependence-app name="com.google.android.googlequicksearchbox" />
+<dependence-app name="com.google.android.tag" />
+<dependence-app name="com.google.android.ext.services" />
+<dependence-app name="com.google.android.packageinstaller" />
+<dependence-app name="com.google.android.maps" />
+<dependence-app name="com.google.android.media.effects" />
+<dependence-app name="com.android.chrome" />
+<dependence-app name="com.google.android.apps.docs" />
+<dependence-app name="com.google.android.apps.tachyon" />
+<dependence-app name="com.google.android.gm" />
+<dependence-app name="com.google.android.syncadapters.calendar" />
+<dependence-app name="com.google.android.syncadapters.contacts" />
+<dependence-app name="com.google.android.talk" />
+<dependence-app name="com.google.android.apps.maps" />
+<dependence-app name="com.google.android.music" />
+<dependence-app name="com.google.android.apps.photos" />
+<dependence-app name="com.google.android.videos" />
+<dependence-app name="com.google.android.webview" />
+<dependence-app name="com.google.android.youtube" />
+<dependence-app name="com.google.android.tts" />
+<dependence-app name="com.google.android.apps.walletnfcrel" />
+<dependence-app name="com.google.android.apps.books" />
+
+<dependence-app name="com.google.android.calendar" />
+<dependence-app name="com.google.android.apps.cloudprint" />
+
+<dependence-app name="com.google.android.apps.enterprise.dmagent" />
+<dependence-app name="com.google.android.apps.docs.editors.docs" />
+<dependence-app name="com.google.android.apps.docs.editors.sheets" />
+<dependence-app name="com.google.android.apps.docs.editors.slides" />
+<dependence-app name="com.android.facelock" />
+<dependence-app name="com.google.android.keep" />
+<dependence-app name="com.google.android.play.games" />
+<dependence-app name="com.google.android.apps.plus" />
+<dependence-app name="com.google.android.marvin.talkback" />
+<dependence-app name="com.google.android.apps.magazines" />
+<dependence-app name="com.google.android.apps.genie.geniewidget" />
+<dependence-app name="com.google.android.apps.messaging" />
+<dependence-app name="com.google.android.ext.shared" />
+<dependence-app name="com.google.android.printservice.recommendation" />
+
+
+<!--May not have network access-->
+<dependence-app name="com.google.android.calculator" />
+<dependence-app name="com.google.android.setupwizard" />
+<dependence-app name="com.google.android.deskclock" />
+

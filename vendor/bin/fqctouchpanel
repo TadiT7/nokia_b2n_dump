@@ -1,0 +1,68 @@
+#!/vendor/bin/sh
+
+SUCCESS="0"
+FAILED="1"
+# SW4-HL-TouchPanel-FTM-ImplmentSelftTestAndFirmwareUpgrade-00+{_20170509
+INVALID_OPT="1"
+ERR_IOCTL="2"
+ERR_LCD_SIZE="3"
+ERR_LCD_BPP="4"
+INIT_FAILED="5"
+ERROR_START_POINT="6"
+ERR_NOMATCH="0xff"
+ERROR_DRAW_DIRECT="7"
+ERROR_OUT_OF_RANGE="8"
+FILEAIL="1"
+I2CFAIL="2"
+UPGRADEAIL="3"
+NONEEDUPGRADE="4"
+SHORTFAIL="1"
+OPENFAIL="2"
+ALLNODEFAIL="3"
+I2CTRANFAIL="4"
+NOBKFAIL="6"
+STDEVFAIL="7"
+IRAMFAIL="8"
+# SW4-HL-TouchPanel-FTM-ImplmentSelftTestAndFirmwareUpgrade-00+}_20170509
+
+FT_TOUCH_TEST_RESULT="/data/vendor/misc/touch/sensortest_result.txt"
+
+TOUCH_SELF_TEST_INPUT_PATH="/vendor/etc/drg/"
+TOUCH_SELF_TEST_INPUT_PATH_CLT="/vendor/etc/ctl/"
+TOUCH_SELF_TEST_INPUT_PATH_DRP="/vendor/etc/drp/"
+TOUCH_SELF_TEST_OUTPUT_PATH="/data/vendor/misc/touch/"
+TOUCH_SELF_TEST_RESULT_FILENAME="sensortest_result.txt"
+device=$(/vendor/bin/getprop ro.boot.device)
+parameter_1=$(/vendor/bin/getprop vendor.sys.fqctouchpanel)
+cpuid=$(/vendor/bin/cat /sys/devices/soc0/soc_id)
+/vendor/bin/setprop vendor.sys.fqctpret 1
+
+fqctouchpanel_selftest() {
+	case "$parameter_1" in
+		*)
+			/vendor/bin/echo "GT915L touch panel driver ic test"
+			if [ "$device" = "DRG" ]; then
+				if [ "$cpuid" = "317" ]; then
+					gtptest -i $TOUCH_SELF_TEST_INPUT_PATH_DRP -o $TOUCH_SELF_TEST_OUTPUT_PATH -n $TOUCH_SELF_TEST_RESULT_FILENAME -t -x
+				else
+					gtptest -i $TOUCH_SELF_TEST_INPUT_PATH -o $TOUCH_SELF_TEST_OUTPUT_PATH -n $TOUCH_SELF_TEST_RESULT_FILENAME -t -x
+				fi
+			else
+				/vendor/bin/gtptest -i $TOUCH_SELF_TEST_INPUT_PATH_CLT -o $TOUCH_SELF_TEST_OUTPUT_PATH -n $TOUCH_SELF_TEST_RESULT_FILENAME -t -x
+			fi
+			ret=$(/vendor/bin/cat $FT_TOUCH_TEST_RESULT)
+			;;
+	esac
+
+	/vendor/bin/echo "ret=$ret"
+
+	/vendor/bin/setprop vendor.sys.fqctpret $ret
+    /vendor/bin/chmod 666 /data/vendor/misc/touch/* > /dev/null
+	if [ $ret -eq 0 ]; then
+		return $SUCCESS
+	else
+		return $FAIL
+	fi
+}
+
+fqctouchpanel_selftest

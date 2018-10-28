@@ -1,0 +1,10 @@
+animation: 3 2 charger/battery_scale_720p
+fail: charger/battery_fail_720p
+clock_display: 0 0 0 0 0 0 charger/font_720p
+percent_display: 2147483647 2147483647 164 198 57 255 charger/font_720p
+ frame: 750 0 19
+ frame: 750 0 39
+ frame: 750 0 59
+ frame: 750 0 79
+ frame: 750 0 99
+ frame: 750 0 100

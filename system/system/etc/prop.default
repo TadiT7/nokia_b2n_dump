@@ -1,0 +1,36 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+import /system/etc/prop.pre-default
+ro.actionable_compatible_property.enabled=false
+ro.secure=1
+security.perf_harden=1
+ro.adb.secure=1
+ro.allow.mock.location=0
+ro.debuggable=0
+dalvik.vm.image-dex2oat-Xms=64m
+dalvik.vm.image-dex2oat-Xmx=64m
+dalvik.vm.dex2oat-Xms=64m
+dalvik.vm.dex2oat-Xmx=512m
+dalvik.vm.usejit=true
+dalvik.vm.usejitprofiles=true
+dalvik.vm.dexopt.secondary=true
+dalvik.vm.appimageformat=lz4
+pm.dexopt.first-boot=quicken
+pm.dexopt.boot=verify
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.ab-ota=speed-profile
+pm.dexopt.inactive=verify
+pm.dexopt.shared=speed
+dalvik.vm.dex2oat-minidebuginfo=true
+debug.atrace.tags.enableflags=0
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Fri Oct 19 02:10:47 CST 2018
+ro.bootimage.build.date.utc=1539886247
+ro.bootimage.build.fingerprint=Nokia/Onyx_00CN/B2N:9/PPR1.180610.011/00CN_3_340:user/release-keys
+persist.sys.usb.config=none
+
+

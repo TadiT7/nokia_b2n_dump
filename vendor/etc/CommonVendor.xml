@@ -1,0 +1,9 @@
+<CustProp>
+	<CommonVendor>
+	  <device>B2N</device>
+      <name>Onyx_00CN</name>
+      <manufacturer>"HMD Global"</manufacturer>
+      <brand>Nokia</brand>
+      <model>"Nokia 7 plus"</model>
+	</CommonVendor>
+</CustProp>

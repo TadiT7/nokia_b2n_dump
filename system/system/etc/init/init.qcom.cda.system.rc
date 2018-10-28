@@ -1,0 +1,28 @@
+import /system/etc/init/hw/init.sku.${ro.boot.skuid}.${ro.boot.hwmodel}.${ro.boot.simslot}.rc
+import /system/etc/init/hw/init.sku.${ro.boot.skuid}.${ro.boot.hwmodel}.rc
+import /system/etc/init/hw/init.sku.${ro.boot.hwmodel}.rc
+import /system/etc/init/hw/init.sku.${ro.boot.skuid}.rc
+import /system/etc/init/hw/init.sku.rc
+
+on fs
+    setprop sys.cda.checkmultisim 0
+
+# persist.radio.multisim.config is set by default
+on property:persist.radio.multisim.config=* && property:sys.cda.checkmultisim=0
+    setprop sys.cda.checkmultisim 1
+
+# persist.radio.multisim.config is not set by default
+on property:vold.decrypt=trigger_restart_framework && property:sys.cda.checkmultisim=0
+    setprop persist.radio.multisim.config "dsds"
+    setprop sys.cda.checkmultisim 1
+
+on property:sys.cda.checkmultisim=1 && property:ro.boot.simslot=1
+    setprop persist.radio.multisim.config "ssss"
+    setprop sys.cda.checkmultisim 2
+
+on property:sys.cda.checkmultisim=1 && property:ro.boot.simslot=2
+    setprop sys.cda.checkmultisim 2
+
+on property:ro.boot.skuid=*
+    setprop ro.cda.skuid.id ${ro.boot.skuid}
+    setprop ro.cda.skuid.id_final ${ro.boot.skuid}

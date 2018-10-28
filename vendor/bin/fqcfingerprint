@@ -1,0 +1,85 @@
+#!/vendor/bin/sh
+
+vendor=$(/vendor/bin/getprop ro.boot.fp)
+parameter_1=$(/vendor/bin/getprop vendor.sys.fqcfingerprint)
+/vendor/bin/setprop vendor.sys.fqcfpret 0
+goodix_cmd="gf_cmd_test_"$vendor
+
+fingerprint_selftest() {
+	if [ "${vendor:0:4}" = "gxfp" ]; then
+		case "$parameter_1" in
+			"1")
+				echo "FPM self test"
+				$goodix_cmd 1 > /dev/null
+				ret=$?
+				;;
+			"2")
+				echo "FPM touch test"
+				$goodix_cmd 2 > /dev/null
+				ret=$?
+				;;
+			"3")
+				echo "FPM SNR test"
+				$goodix_cmd 3 > /dev/null
+				ret=$?
+				;;
+			"4")
+				echo "FPM Image Quality test"
+				$goodix_cmd 4 > /dev/null
+				ret=$?
+				;;
+			*)
+				echo "just test"
+				$goodix_cmd > /dev/null
+				ret=$?
+				;;
+		esac
+		echo "ret=$ret"
+		/vendor/bin/setprop vendor.sys.fqcfpret $ret
+	elif [ "$vendor" = "elan" ]; then
+		case "$parameter_1" in
+			"1")
+				echo "ELAN_Self_Test......"
+				/vendor/bin/ElanPrintf test_tool interface > /dev/null
+				ret1=$?
+				/vendor/bin/ElanPrintf test_tool cal 800 14200 > /dev/null
+				ret2=$?
+				echo "ELAN_Self_Test_Result: ret1 = $ret1, ret2 = $ret2"
+				if [ $ret1 -eq 0 ] && [ $ret2 -eq 0 ]; then
+					echo "Self_Test_Pass"
+					echo "OpenShort_Pass"
+					echo "SMT_Tests_all_Success"
+					/vendor/bin/ElanPrintf woemode
+					/vendor/bin/setprop vendor.sys.fqcfpret 1
+					ret=1
+				else
+					echo "OpenShort Fail"
+					echo "Self Test Fail"
+					echo "SMT Tests all Fail"
+					/vendor/bin/ElanPrintf woemode
+					/vendor/bin/setprop vendor.sys.fqcfpret 0
+					ret=0
+				fi
+				;;
+		esac
+		echo "ret=$ret"
+		/vendor/bin/setprop vendor.sys.fqcfpret $ret
+	else
+		/system/bin/fpc_tee_test -b > /dev/null
+		checkerboardtest=$?
+		/vendor/bin/setprop vendor.sys.fqcfpret $checkerboardtest
+		busybox killall logcat busybox
+
+		if [ "$checkerboardtest" -eq "0" ]; then
+			return_info
+		elif [ "$checkerboardtest" -eq "1" ]; then
+			echo "ErrorCode=$checkerboardtest"
+			return_info " Failed"
+		else
+			echo "ErrorCode=$checkerboardtest"
+			return_info " Failed"
+		fi
+	fi
+}
+
+fingerprint_selftest

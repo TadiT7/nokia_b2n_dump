@@ -1,0 +1,5 @@
+#! /system/bin/sh
+#/system/bin/logcat -f /data/logs/logex_main -r 8192 -n 5 -v threadtime -b main *:V
+MainCommand="/system/bin/logcat `getprop logex.main.command`"
+echo $MainCommand
+eval $MainCommand

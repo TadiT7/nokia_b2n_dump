@@ -1,0 +1,25 @@
+
+on fs
+    mkdir /vendor/BBSYS 0770 system system
+    chown system system /vendor/BBSYS
+    chmod 0770 /vendor/BBSYS
+    chmod 0660 /dev/fih
+    chown root system /dev/fih
+    restorecon_recursive /vendor/BBSYS
+
+        
+on post-fs-data
+    mkdir /vendor/BBSYS/box 0770 system system
+    chown system system /vendor/BBSYS/box
+    chmod 0770 /vendor/BBSYS/box
+    mkdir /vendor/BBSYS/box/report 0770 system system
+    chown system system /vendor/BBSYS/box/report
+    chmod 0770 /vendor/BBSYS/box/report
+    mkdir /data/misc/box 0770 system system
+    chown system system /data/misc/box
+    chmod 0770 /data/misc/box
+    mkdir /data/misc/box/report 0770 system system
+    chown system system /data/misc/box/report
+    chmod 0770 /data/misc/box/report
+    
+    

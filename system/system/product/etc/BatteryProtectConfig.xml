@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Please do not change this file without throughly reading the parsing codes.
+    It is affected many assumptions if its arrangement is changed.
+-->
+<root>
+        <bt_low_mode_shutdown>-21</bt_low_mode_shutdown>
+        <bt_decrease_charging>ON</bt_decrease_charging>
+        <bt_low_mode_decrease_charging>15</bt_low_mode_decrease_charging>
+        <bt_high_mode_decrease_charging>45</bt_high_mode_decrease_charging>
+        <bt_is_wear>0</bt_is_wear>
+        <bt_only_support_maxtemp_mode>OFF</bt_only_support_maxtemp_mode> <!--no low/alatm/cooldown/maxtemp -->
+        <bt_low_mode>ON</bt_low_mode>          <!--must with the normal mode -->
+        <bt_alarm_mode>ON</bt_alarm_mode>       <!--must with the normal mode -->
+        <bt_cooldown_mode>ON</bt_cooldown_mode> <!--must with the normal mode -->
+        <bt_maxtemp_mode>ON</bt_maxtemp_mode>   <!--must with the normal mode -->
+        <bt_low_mode_threshold>0</bt_low_mode_threshold>
+        <bt_alarm_mode_threshold>55</bt_alarm_mode_threshold>
+        <bt_cooldown_mode_threshold>58</bt_cooldown_mode_threshold>
+        <bt_normal_mode_threshold>50</bt_normal_mode_threshold>
+        <bt_maxtemp_mode_threshold>60</bt_maxtemp_mode_threshold>
+        <bt_warning_mode_threshold>-128</bt_warning_mode_threshold>
+        <bt_enable_service_detect>1</bt_enable_service_detect>
+        <bt_service_detect_time>180000</bt_service_detect_time>
+        <bt_battery_change_intent_min_interval>2000</bt_battery_change_intent_min_interval>
+        <bt_maxtemp_mode_shutdown_delaytime>8000</bt_maxtemp_mode_shutdown_delaytime>
+        <bt_adjust_backlight_enable>0</bt_adjust_backlight_enable>
+        <bt_adjust_backlight_mode_threshold>45</bt_adjust_backlight_mode_threshold>
+        <bt_adjust_backlight_mode_exit_threshold>40</bt_adjust_backlight_mode_exit_threshold>
+        <bt_adjust_backlight_manual_value>128</bt_adjust_backlight_manual_value>
+        <bt_adjust_backlight_auto_value>68</bt_adjust_backlight_auto_value>
+        <bt_adjust_backlight_auto_value_ps>26</bt_adjust_backlight_auto_value_ps>
+        <bt_backlight_mtk_virtual_file_path>/sys/class/leds/lcd-backlight/brightness</bt_backlight_mtk_virtual_file_path>
+        <bt_backlight_qc_virtual_file_path>/sys/class/leds/lcd-backlight/brightness</bt_backlight_qc_virtual_file_path>
+        <bt_shutdown_ap_white_list>com.fihtdc.batteryprotect;com.android.phone</bt_shutdown_ap_white_list>
+        <bt_enable_battery_level_detect>OFF</bt_enable_battery_level_detect>
+        <bt_battery_level_ui_displaytime>3000</bt_battery_level_ui_displaytime>
+		<bt_full_charge_mode_file_path>/sys/class/power_supply/battery/device/jeita_full_capacity</bt_full_charge_mode_file_path>
+</root>

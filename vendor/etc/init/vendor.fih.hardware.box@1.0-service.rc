@@ -1,0 +1,63 @@
+service box-hal-1-0 /vendor/bin/hw/vendor.fih.hardware.box@1.0-service
+    class hal
+    user system
+    group system
+
+
+on fs
+    mkdir /vendor/BBSYS 0770 system system
+    chown system system /vendor/BBSYS
+    chmod 0770 /vendor/BBSYS
+    chmod 0660 /dev/fih
+    chown root system /dev/fih
+    restorecon_recursive /vendor/BBSYS
+
+    
+on post-fs-data
+    mkdir /vendor/BBSYS/box 0770 system system
+    chown system system /vendor/BBSYS/box
+    chmod 0770 /vendor/BBSYS/box
+    mkdir /vendor/BBSYS/box/report 0770 system system
+    chown system system /vendor/BBSYS/box/report
+    chmod 0770 /vendor/BBSYS/box/report
+    mkdir /data/misc/box 0770 system system    
+    chown system system /data/misc/box    
+    chmod 0770 /data/misc/box    
+    mkdir /data/misc/box/report 0770 system system    
+    chown system system /data/misc/box/report    
+    chmod 0770 /data/misc/box/report    
+    mkdir /data/misc/hcs 0770 system system
+    chown system system /data/misc/hcs
+    chmod 0770 /data/misc/hcs
+    mkdir /data/misc/hcs/data 0770 system system
+    chown system system /data/misc/hcs/data
+    chmod 0770 /data/misc/hcs/data
+    mkdir /data/misc/hcs/report 0770 system system
+    chown system system /data/misc/hcs/report
+    chmod 0770 /data/misc/hcs/report
+    mkdir /data/misc/hcs/report/upload 0770 system system
+    chown system system /data/misc/hcs/report/upload
+    chmod 0770 /data/misc/hcs/report/upload
+    mkdir /data/misc/hcs/log 0770 system system
+    chown system system /data/misc/hcs/log
+    chmod 0770 /data/misc/hcs/log
+    mkdir /data/misc/hcs/log/upload 0770 system system
+    chown system system /data/misc/hcs/log/upload
+    chmod 0770 /data/misc/hcs/log/upload
+    mkdir /storage/emulated/0/qpython
+    chown system system /storage/emulated/0/qpython
+    chmod 0770 /storage/emulated/0/qpython
+    mkdir /storage/emulated/0/qpython/cache
+	chown system system /storage/emulated/0/qpython/cache
+	chmod 0770 /storage/emulated/0/qpython/cache
+
+on property:persist.vendor.box-hal-1-0=on
+    start box-hal-1-0
+
+on property:persist.vendor.box-hal-1-0=off
+    stop box-hal-1-0
+
+on property:persist.vendor.box-hal-1-0=restart
+    stop box-hal-1-0
+    setprop persist.vendor.box-hal-1-0 on
+    

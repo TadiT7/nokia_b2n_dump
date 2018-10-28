@@ -1,0 +1,34 @@
+import /vendor/etc/init/hw/init.sku.${ro.boot.skuid}.${ro.boot.hwmodel}.${ro.boot.simslot}.rc
+import /vendor/etc/init/hw/init.sku.${ro.boot.skuid}.${ro.boot.hwmodel}.rc
+import /vendor/etc/init/hw/init.sku.${ro.boot.hwmodel}.rc
+import /vendor/etc/init/hw/init.sku.${ro.boot.skuid}.rc
+import /vendor/etc/init/hw/init.sku.rc
+
+on fs
+# Mount virtual cd-rom.
+    chown system hidden /vendor/hidden
+    restorecon_recursive /vendor/hidden
+
+# Mount CDA image.
+    chown system system /vendor/hidden/data
+    restorecon_recursive /vendor/hidden/data
+
+# Set /vendor/hidden /vendor/hidden/data directory permission
+    chmod 0551 /vendor/hidden
+    chmod 0551 /vendor/hidden/data
+    mkdir /vendor/hidden/data/CDALog 0755 system system
+
+on property:sys.boot_completed=1
+    losetup /dev/block/cdrom-loop /hidden/custom.iso
+    losetup /dev/block/cdrom-loop2 /vendor/hidden/custom.iso
+    write /sys/devices/soc/78db000.usb/msm_hsusb/gadget/lun0/file /dev/block/cdrom-loop
+    write /sys/devices/soc/78db000.usb/msm_hsusb/gadget/lun0/file /dev/block/cdrom-loop2
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file /dev/block/cdrom-loop
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file /dev/block/cdrom-loop2
+    restorecon_recursive /dev/block/cdrom-loop
+
+service initcda /vendor/bin/InitCDA
+    class late_start
+    user root
+    group root
+    oneshot

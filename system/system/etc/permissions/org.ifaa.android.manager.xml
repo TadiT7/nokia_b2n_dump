@@ -1,0 +1,4 @@
+<permissions>
+    <library name="org.ifaa.android.manager"
+            file="/system/framework/org.ifaa.android.manager.jar" />
+</permissions>

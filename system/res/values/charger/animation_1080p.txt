@@ -1,0 +1,10 @@
+animation: 3 2 charger/battery_scale_1080p
+fail: charger/battery_fail_1080p
+clock_display: 0 0 0 0 0 0 charger/font_1080p
+percent_display: 2147483647 2147483647 164 198 57 255 charger/font_1080p
+ frame: 750 0 19
+ frame: 750 0 39
+ frame: 750 0 59
+ frame: 750 0 79
+ frame: 750 0 99
+ frame: 750 0 100

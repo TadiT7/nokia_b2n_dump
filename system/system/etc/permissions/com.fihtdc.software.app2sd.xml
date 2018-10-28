@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Feature for devices with app2sd. -->
+<permissions>
+    <feature name="com.fihtdc.software.app2sd" />
+</permissions>

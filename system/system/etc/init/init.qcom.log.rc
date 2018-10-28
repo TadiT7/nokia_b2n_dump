@@ -1,0 +1,165 @@
+
+on init
+    # do not output log to UART console
+    write /proc/sys/kernel/printk 0 0 0 0
+
+on post-fs-data
+    # SW2-5-1-MP-DbgCfgTool-00*[
+    mkdir /data/misc 01775 system misc
+    # SW2-5-1-MP-DbgCfgTool-00*]
+
+    #SW2-5-1-MP-DbgCfgTool-00+[
+    chmod 0664 /dev/dbgcfgtool
+    mkdir /data/efslog 0775 system system
+    mkdir /data/efslog/err 0775 system system
+    mkdir /data/efslog/OEMDBG_LOG 0775 system system
+    mkdir /data/efslog/qxdm 0775 system system
+    mkdir /data/last_kmsg 0775 system system
+    mkdir /data/last_alog 0775 system system
+    #SW2-5-1-MP-DbgCfgTool-00+]
+
+#start log lately to shorten boot time
+#on boot
+#on nonencrypted
+on post-fs-data
+    # FIH, HenryMCWang, 2010/08/17, +++
+    # Set /dev/kmsg & /proc/mlog user/group to system
+    chown system system /dev/kmsg
+    chown system system /proc/mlog
+    # FIH, HenryMCWang, 2010/08/17, +++
+
+    #FIH, Kany ,2012/08/22 klogd, +++
+    mkdir /data/logs/ 0775 system system
+    restorecon /data/logs/
+    #start loggerlauncher
+    chmod 0777 /system/bin/cplog
+
+    # CustManager /data/vendor/cust
+    mkdir /data/vendor/cust 0771 system system
+    chown system system /data/vendor/cust
+    restorecon_recursive /data/vendor/cust
+
+    #chmod 0777 /system/etc/execute-klogd
+    start mlog
+    #start exklogd
+    #FIH, Kany ,2012/08/22 klogd, +++
+
+#SW2-5-1-MP-DbgCfgToolTool-00+ Add 'loggerlauncher' socket
+service loggerlauncher /system/bin/loggerlauncher_Qualcomm
+    class late_start
+    user system
+    group system
+    oneshot
+    socket loggerlauncher stream 666 system system
+
+# Logcat Kill For Encrypt 2013.12.04 DanielPYLiao
+# ==========================================
+on property:vold.decrypt=trigger_shutdown_framework
+    start logcatkill
+
+service logcatkill /system/bin/logcat_kill
+    user system
+    group system
+    oneshot
+# ==========================================
+# Logcat Kill For Encrypt 2013.12.04 DanielPYLiao
+
+# FIHTDC, Div2-SW2-BSP HenryMCWang, pmlog
+service logfile /system/bin/logfile -b -f /data/pmlog.log
+    user system
+    group system
+    oneshot
+# FIHTDC, Div2-SW2-BSP HenryMCWang, pmlog
+
+# FIHTDC, Div2-SW2-BSP HenryMCWang, mlog
+service mlog /system/bin/mlog
+    user system
+    group system
+    disabled
+    oneshot
+# FIHTDC, Div2-SW2-BSP HenryMCWang, mlog
+
+# FIHTDC, KevinChen 20120517 for debug
+service FIHDumpInfo /system/bin/FIHDumpInfo
+    group system
+    oneshot
+    disabled
+
+on property:persist.sys.fih_sysinfodump=FIHDumpInfo
+	start FIHDumpInfo
+
+on property:persist.sys.fih_sysinfodump=restart_fih_logging
+	start loggerlauncher
+# FIHTDC, KevinChen 20120517 for debug
+
+#FIH, Kany ,2012/08/22 klogd, +++
+#service exklogd /system/bin/sh /system/etc/execute-klogd.sh
+#    user root
+#    group root
+#    disabled
+#    oneshot
+#FIH, Kany ,2012/08/22 klogd, +++
+
+
+# fihtdc@20161208 AlanChiu add fxtzlogd
+# fxtzlogd utility : to retrieve tz logs to android log system
+service fxtzlogd /system/bin/fxtzlogd
+    class late_start
+    user system
+    group system
+
+# bugreport is triggered by holding down volume down, volume up and power
+service bugreport /system/bin/dumpstate -d -p -B \
+        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
+    class main
+    disabled
+    oneshot
+#    keycodes 114 115 116
+
+#atrace-log
+service atrace-log /system/bin/atrace-log.sh
+        class main
+        disabled
+        oneshot
+        keycodes 115 116
+
+
+# 20140220 DbgCfgTool SYSAPP-143 - Shih-Meng Teng, Begin
+#service cpyFile2iSD /data/data/com.fihtdc.DbgCfgTool/files/cpfile /storage/sdcard0/
+service cpyFile2iSD /system/bin/cpfile /storage/sdcard0/
+#        user root
+        class main
+        oneshot
+        disabled
+#        seclabel u:r:cpyFile2iSD_exec:s0
+
+#service cpyFile2eSD /data/data/com.fihtdc.DbgCfgTool/files/cpfile /storage/sdcard1/
+service cpyFile2eSD /system/bin/cpfile /storage/sdcard1/
+#        user root
+        class main
+        oneshot
+        disabled
+#        seclabel u:r:cpyFile2iSD_exec:s0
+        
+# 20140220 DbgCfgTool SYSAPP-143 - Shih-Meng Teng, End
+
+# logex service
+service logex /system/bin/logex
+    user system
+    group system
+
+service logex_system /system/bin/logex_system
+    user system
+    group system
+
+service logex_radio /system/bin/logex_radio
+    user system
+    group system
+
+service logex_events /system/bin/logex_events
+    user system
+    group system
+
+service logex_kernel /system/bin/logex_kernel
+    user system
+    group system

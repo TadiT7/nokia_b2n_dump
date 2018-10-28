@@ -1,0 +1,32 @@
+#For SSR ramdump
+
+ #ALLON_test prop+++
+#on property:persist.sys.fih.ssr_report=1
+#  start mdm_report
+  
+#on property:persist.sys.fih.ssr_report=0
+#  stop mdm_report  
+    
+#mdm report service
+service mdm_report /system/bin/mdm_report
+    user system
+    group system
+    disabled
+	oneshot
+    
+#mdm finish dump service
+service mdm_finish_dump /system/bin/mdm_finish_dump
+    user system
+    group system
+    disabled
+	oneshot
+  
+#mdm restart service
+service mdm_restart /system/bin/mdm_restart
+    user system
+    group system
+    disabled
+	oneshot  
+  
+        
+    

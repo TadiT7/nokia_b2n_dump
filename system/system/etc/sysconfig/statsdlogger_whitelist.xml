@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <!-- SW5_BH_StatsdLogger -->
+	<allow-in-power-save package="com.fih.StatsdLogger" />
+    <!-- SW5_BH_StatsdLogger -->
+</config>

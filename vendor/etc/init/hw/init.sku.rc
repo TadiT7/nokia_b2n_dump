@@ -1,0 +1,16 @@
+on fs
+    setprop ro.product.board SDM660
+    setprop ro.product.nickname "Nokia 7 plus"
+    setprop ro.product.vendor.brand Nokia
+    setprop ro.product.vendor.device B2N
+    setprop ro.product.vendor.manufacturer "HMD Global"
+    setprop ro.product.vendor.model "Nokia 7 plus"
+    setprop ro.product.vendor.name Onyx_00CN
+    setprop ro.config.dbgcfgtool_config 0
+    setprop ro.sf.lcd_density 420
+    setprop dalvik.vm.dex2oat-threads 4
+
+on post-fs
+    setprop persist.vendor.camera.lib2d.rotation off
+on fs
+	setprop ro.vendor.build.fingerprint Nokia/Onyx_00CN/B2N:9/PPR1.180610.011/00CN_3_340:user/release-keys
